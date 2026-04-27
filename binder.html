@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Binder | Luban Robotics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="binder-page">
+    <header class="site-header" id="top">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html#home" aria-label="Luban Robotics home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="images/binder/no-bg/luban-logo.png" alt="" />
+          </span>
+          <span>
+            <strong>Luban Robotics</strong>
+            <small>FRC 9597</small>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Open menu</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#engineering">Robot</a>
+          <a href="index.html#gallery">Gallery</a>
+          <a class="nav-cta" href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="binder-poster-section">
+        <a class="button secondary binder-back" href="index.html#home">Back To Main Website</a>
+        <article class="technical-binder" aria-label="Luban Robotics 2026 technical binder">
+          <header class="binder-poster-header">
+            <figure class="binder-hero-robot">
+              <img src="images/binder/no-bg/luban-robot.png" alt="Luban Robotics 9597 robot" />
+            </figure>
+            <div class="binder-title-lockup">
+              <img src="images/binder/no-bg/luban-logo.png" alt="Luban Robotics logo" />
+              <div>
+                <p>9597</p>
+                <h1>Luban Robotics</h1>
+                <span>Technical Binder</span>
+              </div>
+            </div>
+          </header>
+
+          <section class="binder-block binder-block-left">
+            <div>
+              <h2>Drive Train</h2>
+              <p>
+                The drive train is designed for stable movement, reliable field adaptability, and fast
+                direction changes during defense and cycling. Using a structured chassis, durable
+                lightweight materials, and modular swerve wheels, the robot can move smoothly while
+                protecting wiring paths and keeping repairs quick between matches. Our focus is a
+                stable, reliable, and efficient base that gives drivers confidence on every part of the
+                field.
+              </p>
+            </div>
+            <img src="images/binder/no-bg/drivetrain-cad.png" alt="Drive train CAD" />
+          </section>
+
+          <section class="binder-block binder-block-right">
+            <img src="images/binder/no-bg/column-shooter.png" alt="Column feeder and launcher CAD" />
+            <div>
+              <h2>Column</h2>
+              <p>
+                The column guides game pieces upward into the scoring path. During testing, balls
+                could get stuck near the X60 motor gap, so we added a front blocker and reshaped the
+                side PC sheets to guide pieces toward the center. This created a smoother path,
+                reduced interruptions, and helped increase throughput from 6 BPS to 13 BPS for faster
+                scoring.
+              </p>
+            </div>
+          </section>
+
+          <section class="binder-block binder-block-left">
+            <div>
+              <h2>Feeder</h2>
+              <p>
+                The feeder uses a multi-lane roller system to move game pieces efficiently toward the
+                launcher. Earlier PC separators created tight spacing where several balls could
+                compress and jam. By opening the feeder path, game pieces can adjust naturally, which
+                reduces compression, improves flexibility, keeps the structure strong, and makes the
+                robot easier to maintain during competition.
+              </p>
+            </div>
+            <img src="images/binder/no-bg/feeder-iteration.png" alt="Feeder mechanism CAD" />
+          </section>
+
+          <section class="binder-block binder-block-right">
+            <img src="images/binder/no-bg/hopper-hook.png" alt="Hopper and hook CAD" />
+            <div>
+              <h2>Hopper And Hook</h2>
+              <p>
+                The hopper organizes game pieces before they enter the feeder, using a guided flow
+                design to reduce friction and keep handling consistent. The hook is designed to hang
+                the robot during the endgame. Its structure focuses on secure deployment, stable
+                contact, and 100% accurate engagement so the robot can complete the hanging task
+                confidently at the end of the match.
+              </p>
+            </div>
+          </section>
+
+          <section class="binder-block binder-block-left">
+            <div>
+              <h2>Intake</h2>
+              <p>
+                The intake subsystem is optimized for reliable ground pickup and fast cycling. We
+                tested a three-roller version, but it added friction, complexity, and more failure
+                points. The final two-roller method is simpler, lighter, and easier to tune. It moves
+                game pieces at a faster pace while keeping the pickup method easy for students to
+                maintain.
+              </p>
+            </div>
+            <img src="images/binder/no-bg/intake-two-roller.png" alt="Intake CAD" />
+          </section>
+
+          <div class="binder-program-label">PROGRAM</div>
+
+          <section class="binder-block binder-block-right">
+            <img src="images/binder/no-bg/auto-aiming-preview.png" alt="Auto-aiming vision target preview" />
+            <div>
+              <h2>Auto-Aiming</h2>
+              <p>
+                Auto-aiming uses camera feedback, calibrated scoring parameters, and controlled
+                launcher output to help the robot align with scoring targets. The system calculates
+                position and angle from real-time field information, improving shooting consistency
+                and supporting accurate scoring from different locations on the field.
+              </p>
+            </div>
+          </section>
+
+          <section class="binder-block binder-block-left">
+            <div>
+              <h2>Autonomous</h2>
+              <p>
+                Autonomous mode combines vision, odometry, and planned arc paths to let the robot
+                move and score. The auto-locate system uses AprilTag markers, camera feedback, and
+                motion data to correct drift, keep the robot aligned, and choose safe paths that
+                support high scoring and strong alliance cooperation.
+              </p>
+            </div>
+            <img src="images/binder/no-bg/auto-path.png" alt="Autonomous path planning software" />
+          </section>
+
+          <section class="binder-block binder-block-right binder-footer-block">
+            <img src="images/binder/no-bg/luban-robot-gallery.png" alt="Robot control and mechanism overview" />
+            <div>
+              <h2>Semi-Automatic Control</h2>
+              <p>
+                Semi-automatic control gives drivers a reliable middle option between full manual
+                operation and autonomous routines. It helps the operators shoot without manual
+                control, which improves efficiency and consistency, increasing the amount of cycles we
+                can get in each transition. Redundant logic helps the team switch modes smoothly if
+                field conditions change.
+              </p>
+            </div>
+          </section>
+
+          <footer class="binder-poster-footer">
+            <strong>9597</strong>
+            <span>2026 REBUILT</span>
+          </footer>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="index.html#home" aria-label="Back to main website">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="images/binder/no-bg/luban-logo.png" alt="" />
+        </span>
+        <span>
+          <strong>Luban Robotics</strong>
+          <small>FRC 9597</small>
+        </span>
+      </a>
+      <p>Technical binder content is based on the 9597 Engineering Note.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
