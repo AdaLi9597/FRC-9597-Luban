@@ -695,7 +695,7 @@ h3 {
 .technical-detail-list {
   display: grid;
   gap: 8px;
-  margin: 0;
+  margin: 10px 0 0;
   padding-left: 18px;
   color: var(--muted);
 }
@@ -1693,6 +1693,10 @@ h3 {
 .notebook-reflection-grid p {
   margin-bottom: 0;
   color: var(--muted);
+}
+
+.notebook-entry p + p {
+  margin-top: 10px;
 }
 
 .notebook-rule-grid,
