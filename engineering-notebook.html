@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering Notebook | Luban Robotics</title>
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="images/team/favicon.png" />
+    <link rel="apple-touch-icon" href="images/team/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="engineering-notebook-page">
+    <header class="site-header" id="top">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html#home" aria-label="Luban Robotics home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="images/team/favicon.png" alt="" />
+          </span>
+          <span>
+            <strong>Luban Robotics</strong>
+            <small>FRC 9597</small>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Open menu</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#engineering">Robot</a>
+          <a href="binder.html">Binder</a>
+          <a class="nav-cta" href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="notebook-document">
+      <section class="notebook-cover">
+        <div class="notebook-cover-copy">
+          <p class="eyebrow">Engineering Notebook</p>
+          <h1>Luban Robotics 9597 Technical Notes And Rules Analysis</h1>
+          <p>
+            A build-season notebook for the 2026 robot, collecting design decisions, subsystem
+            iterations, software controls, strategy thinking, and competition rules analysis in one
+            editable place.
+          </p>
+          <div class="notebook-cover-actions">
+            <a class="button primary" href="#rules-analysis">Rules Analysis</a>
+            <a class="button secondary" href="#technical-notes">Technical Notes</a>
+          </div>
+        </div>
+        <figure>
+          <img src="images/robot/luban-robot.jpg" alt="Luban Robotics 9597 robot" />
+        </figure>
+      </section>
+
+      <section class="notebook-paper">
+        <div class="notebook-toc">
+          <article>
+            <span>01</span>
+            <strong>Game Rules</strong>
+            <p>Fuel scoring, penalties, match phases, coordination, and robot constraints.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>Mechanical Systems</strong>
+            <p>Drive train, intake, feeder, column, shooter, hopper, and hook design notes.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>Programming</strong>
+            <p>Auto-aiming, autonomous path planning, PID control, and semi-automatic control.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <strong>Reflections</strong>
+            <p>Efficiency, repeated testing, regional learning, and future competition goals.</p>
+          </article>
+        </div>
+
+        <section class="notebook-chapter" id="rules-analysis">
+          <div class="section-heading">
+            <p class="eyebrow">Chapter 01</p>
+            <h2>Rules Analysis And Match Strategy</h2>
+          </div>
+          <article class="notebook-entry">
+            <figure>
+              <img
+                src="images/blog/rebuilt-bonus-rp-thresholds.jpg"
+                alt="REBUILT bonus ranking point thresholds"
+              />
+            </figure>
+            <div>
+              <p class="entry-date">Kickoff Analysis</p>
+              <h3>Fuel Scoring Accuracy</h3>
+              <p>
+                For a fuel to count as scored, it must fully enter the opening at the top of the hub
+                and be processed through the system. Balls that bounce out or fail to fully enter the
+                hub are not counted. Therefore, accuracy and consistency in shooting mechanisms are
+                critical for maximizing scoring efficiency.
+              </p>
+            </div>
+          </article>
+          <div class="notebook-rule-grid">
+            <article>
+              <h3>Penalty Avoidance</h3>
+              <p>
+                Penalties play a significant role in match outcomes and should be carefully avoided.
+                Common penalties include entering protected opponent zones, interfering with robots
+                during critical actions such as climbing, and violating human player restrictions,
+                such as reaching beyond designated boundaries.
+              </p>
+              <p>
+                Minor violations, known as fouls, typically award around 5 points to the opposing
+                alliance, while more serious violations, or technical fouls, can award approximately
+                15 points. Severe or repeated infractions may result in yellow or red cards.
+              </p>
+            </article>
+            <article>
+              <h3>Strategic Balance</h3>
+              <p>
+                Teams must balance scoring efficiency with defensive awareness and cooperation.
+                High-probability scoring methods include short-range shooting into the hub and fast
+                cycling of fuels.
+              </p>
+              <p>
+                Defensive strategies can include blocking opponent paths to the hub or disrupting
+                their ability to collect fuel in the neutral zone, but defensive play must avoid
+                protected areas.
+              </p>
+            </article>
+            <article>
+              <h3>Match Phases</h3>
+              <p>
+                A typical match has three phases: a 20-second autonomous period, a 2-minute and
+                20-second teleoperated period, and a final 30-second endgame. During teleop, hub
+                activation alternates between alliances, requiring teams to adapt dynamically.
+              </p>
+            </article>
+            <article>
+              <h3>Team Coordination</h3>
+              <p>
+                Strong, high-scoring robots should focus on scoring, while partners support by
+                supplying fuel or playing defense. Medium-level robots can balance scoring and
+                assisting roles. Lower-scoring robots can still contribute through defense,
+                transporting game pieces, or clearing space.
+              </p>
+            </article>
+            <article>
+              <h3>Robot Constraints</h3>
+              <p>
+                Robots must weigh no more than approximately 125 pounds, including battery and
+                bumpers. At the start of the match, the robot must fit within the defined frame
+                perimeter. Safety is a top priority, and all electrical and mechanical systems must
+                follow official FRC regulations.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="notebook-chapter" id="technical-notes">
+          <div class="section-heading">
+            <p class="eyebrow">Chapter 02</p>
+            <h2>Technical Design Notes</h2>
+          </div>
+          <article class="notebook-entry">
+            <figure>
+              <img src="images/binder/no-bg/drivetrain-cad.png" alt="Drive train CAD" />
+            </figure>
+            <div>
+              <p class="entry-date">Mechanical Entry</p>
+              <h3>Drive Train</h3>
+              <p>
+                The drive train is designed for stable movement, reliable field adaptability, and
+                fast direction changes during defense and cycling. The layout keeps wiring accessible,
+                supports quick repairs between matches, reduces unnecessary weight, and protects
+                important components inside the frame.
+              </p>
+            </div>
+          </article>
+          <article class="notebook-entry">
+            <figure>
+              <img src="images/binder/no-bg/intake-two-roller.png" alt="Intake CAD" />
+            </figure>
+            <div>
+              <p class="entry-date">Mechanical Entry</p>
+              <h3>Intake</h3>
+              <p>
+                The intake subsystem is optimized for reliable ground pickup and fast cycling. We
+                tested a three-roller version, but it added friction, complexity, and more failure
+                points. The final two-roller method is simpler, lighter, easier to tune, and keeps
+                the pickup method easy for students to maintain.
+              </p>
+            </div>
+          </article>
+          <article class="notebook-entry">
+            <figure>
+              <img src="images/binder/no-bg/feeder-iteration.png" alt="Feeder mechanism CAD" />
+            </figure>
+            <div>
+              <p class="entry-date">Iteration Entry</p>
+              <h3>Feeder</h3>
+              <p>
+                The feeder uses a multi-lane roller system to move game pieces efficiently toward the
+                launcher. Earlier PC separators created tight spacing where several balls could
+                compress and jam. Opening the feeder path lets game pieces adjust naturally, reducing
+                compression and improving flexibility, structure strength, and maintainability.
+              </p>
+            </div>
+          </article>
+          <article class="notebook-entry">
+            <figure>
+              <img src="images/binder/no-bg/column-shooter.png" alt="Column and shooter CAD" />
+            </figure>
+            <div>
+              <p class="entry-date">Iteration Entry</p>
+              <h3>Column And Shooter</h3>
+              <p>
+                During testing, game pieces could get stuck near the X60 motor gap. We added a front
+                blocker and reshaped the side PC sheets to guide pieces toward the center. This
+                created a smoother path, reduced interruptions, increased throughput from 6 BPS to 13
+                BPS, and made feed rate and shooting speed more consistent.
+              </p>
+            </div>
+          </article>
+          <article class="notebook-entry">
+            <figure>
+              <img src="images/binder/no-bg/hopper-hook.png" alt="Hopper and hook CAD" />
+            </figure>
+            <div>
+              <p class="entry-date">Endgame Entry</p>
+              <h3>Hopper And Hook</h3>
+              <p>
+                The hopper organizes game pieces before they enter the feeder using guided flow to
+                reduce friction and keep handling consistent. The hook is designed to hang the robot
+                during endgame with secure deployment, stable contact, and 100% accurate engagement.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section class="notebook-chapter">
+          <div class="section-heading">
+            <p class="eyebrow">Chapter 03</p>
+            <h2>Programming And Control Notes</h2>
+          </div>
+          <article class="notebook-entry">
+            <figure>
+              <img src="images/binder/no-bg/auto-aiming-preview.png" alt="Auto aiming preview" />
+            </figure>
+            <div>
+              <p class="entry-date">Vision Entry</p>
+              <h3>Auto-Aiming</h3>
+              <p>
+                Auto-aiming uses camera feedback, calibrated scoring parameters, and controlled
+                launcher output to help the robot align with scoring targets. The system calculates
+                position and angle from real-time field information, improving shooting consistency
+                from different locations.
+              </p>
+            </div>
+          </article>
+          <article class="notebook-entry">
+            <figure>
+              <img src="images/binder/no-bg/auto-path.png" alt="Autonomous path planning" />
+            </figure>
+            <div>
+              <p class="entry-date">Autonomous Entry</p>
+              <h3>Autonomous And PID Control</h3>
+              <p>
+                Autonomous mode combines vision, odometry, planned arc paths, AprilTag markers, and
+                PID control for more accurate positioning. The system corrects drift, keeps the robot
+                aligned, supports high scoring paths, and gives the alliance wider strategic choices.
+              </p>
+            </div>
+          </article>
+          <article class="notebook-entry">
+            <figure>
+              <img src="images/binder/no-bg/luban-robot-gallery.png" alt="Robot mechanism overview" />
+            </figure>
+            <div>
+              <p class="entry-date">Control Entry</p>
+              <h3>Semi-Automatic Control</h3>
+              <p>
+                Semi-automatic control gives drivers a reliable option between full manual operation
+                and autonomous routines. It helps operators shoot without manual control, improving
+                efficiency and consistency and increasing the number of cycles the robot can complete
+                during each transition.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section class="notebook-chapter">
+          <div class="section-heading">
+            <p class="eyebrow">Chapter 04</p>
+            <h2>Testing, Reflection, And Next Steps</h2>
+          </div>
+          <div class="notebook-reflection-grid">
+            <article>
+              <h3>Importance Of Efficiency</h3>
+              <p>
+                Work efficiency is extremely important in every task. We should arrange our steps
+                reasonably and make good use of time. Repeated tests help us find hidden problems in
+                advance, correct mistakes quickly, and make our work more stable and reliable.
+              </p>
+            </article>
+            <article>
+              <h3>Regional Learning</h3>
+              <p>
+                The regional event taught us the importance of reliability, simple robust systems,
+                clear alliance communication, better match testing, and staying resilient when
+                problems appear on the field.
+              </p>
+            </article>
+            <article>
+              <h3>Houston Goal</h3>
+              <p>
+                For Houston, our main goal is to secure a solid average overall performance. Because
+                this is our first time taking part in this event, we prioritize learning, practical
+                experience, observation, communication, and steady improvement.
+              </p>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="index.html#home" aria-label="Back to main website">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="images/team/favicon.png" alt="" />
+        </span>
+        <span>
+          <strong>Luban Robotics</strong>
+          <small>FRC 9597</small>
+        </span>
+      </a>
+      <p>Engineering notebook content is based on the 9597 build-season notes and rules analysis.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
