@@ -687,6 +687,23 @@ h3 {
   font-size: 0.92rem;
 }
 
+.technical-focus-card {
+  display: grid;
+  gap: 12px;
+}
+
+.technical-detail-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.technical-detail-list strong {
+  color: var(--black);
+}
+
 .notebook-section {
   margin-top: 54px;
 }
