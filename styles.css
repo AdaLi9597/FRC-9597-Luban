@@ -798,8 +798,34 @@ h3 {
 }
 
 .timeline article {
+  position: relative;
+  z-index: 1;
   padding: 24px;
   background: var(--white);
+}
+
+.timeline article:not(:last-child) {
+  z-index: 2;
+}
+
+.timeline article:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -17px;
+  z-index: 2;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 900;
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 8px 18px rgba(0, 102, 179, 0.24);
 }
 
 .timeline span {
@@ -1903,6 +1929,10 @@ h3 {
 
   .card-grid.three {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline article::after {
+    display: none !important;
   }
 }
 
