@@ -327,6 +327,18 @@
                 position and angle from real-time field information, improving shooting consistency
                 from different locations.
               </p>
+              <p>
+                The goal of auto-aiming is to reduce the amount of manual correction required from
+                drivers. The camera reads AprilTag information and helps estimate the robot's
+                relative position to the scoring target. After the target position is understood, the
+                program can adjust the shooting angle and prepare the launcher more consistently than
+                a fully manual shot.
+              </p>
+              <ul class="technical-detail-list">
+                <li><strong>AprilTag Detection:</strong> vision data helps locate the target.</li>
+                <li><strong>Angle Adjustment:</strong> shooter settings respond to robot position.</li>
+                <li><strong>Consistency:</strong> repeated calculations reduce human aiming error.</li>
+              </ul>
             </div>
           </article>
           <article class="notebook-entry">
@@ -341,6 +353,25 @@
                 PID control for more accurate positioning. The system corrects drift, keeps the robot
                 aligned, supports high scoring paths, and gives the alliance wider strategic choices.
               </p>
+              <p>
+                In autonomous, the robot must complete tasks without driver control, so path planning
+                and position correction are both important. We use planned paths to define where the
+                robot should travel, while odometry and vision help compare the planned position with
+                the real position. PID control is used to reduce the difference between those two
+                positions smoothly instead of making sudden movements.
+              </p>
+              <p>
+                This makes autonomous more reliable when the robot needs to collect game pieces,
+                avoid alliance partners, and line up for scoring. A good autonomous routine should
+                not only score high points, but also leave the robot in a useful location for teleop
+                and support cooperation with alliance partners.
+              </p>
+              <ul class="technical-detail-list">
+                <li><strong>High Scoring:</strong> routines are designed to reach 50+ point potential.</li>
+                <li><strong>High Cooperation:</strong> paths avoid blocking alliance partners.</li>
+                <li><strong>Wide Choice:</strong> multiple routes let the team adapt to match strategy.</li>
+                <li><strong>PID Positioning:</strong> smoother correction improves accuracy and stability.</li>
+              </ul>
             </div>
           </article>
           <article class="notebook-entry">
@@ -356,6 +387,18 @@
                 efficiency and consistency and increasing the number of cycles the robot can complete
                 during each transition.
               </p>
+              <p>
+                Semi-automatic control is useful during teleop because it lets the driver team keep
+                control of the robot while the program handles repeated precision tasks. Instead of
+                manually tuning every movement, operators can trigger a prepared action such as
+                aiming, adjusting shooter settings, or stabilizing a scoring sequence. This reduces
+                pressure on the drive team and helps the robot repeat successful actions more often.
+              </p>
+              <ul class="technical-detail-list">
+                <li><strong>Operator Support:</strong> repeated actions require fewer manual steps.</li>
+                <li><strong>Cycle Efficiency:</strong> faster transitions create more scoring chances.</li>
+                <li><strong>Fallback Control:</strong> drivers can still use manual control when needed.</li>
+              </ul>
             </div>
           </article>
         </section>
